@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div >
+    <div class="navigator">
+      <nuxt-link to="/" class="btn btn-primary">Home</nuxt-link>
+      <nuxt-link to="/about" class="btn btn-primary">About</nuxt-link>
+      <nuxt-link to="/next" class="btn btn-primary">Next</nuxt-link>
+    </div>
     <nuxt/>
   </div>
 </template>
@@ -49,5 +54,13 @@ html
 {
   color: #fff;
   background-color: #35495e;
+}
+.navigator {
+  width: 100vw;
+  height: 50px;
+  background-color: orangered;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>
