@@ -54,10 +54,12 @@ export default {
         }
         // Check if Mobile Safari on iPod
         else if(isiOsSafari('iPad')){
-            document.write('Probably Safari on an iPad: ' + ua);
+            // document.write('Probably Safari on an iPad: ' + ua);
+            alert('this is an IPad!!' + ua);
         }
         else{
-            document.write('Probably something else: ' + ua)
+            // document.write('Probably something else: ' + ua)
+            alert('this is an Iphone!!' + ua);
         }
       }
   }
