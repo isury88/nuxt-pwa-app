@@ -56,7 +56,7 @@ module.exports = {
   manifest: {
     name: 'Nuxt PWA APP',
     short_name: 'NuxtPWA',
-    display: 'standalone'
+    display: 'minimal-ui'
   },
   /*
   ** Axios module configuration
