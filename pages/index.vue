@@ -56,7 +56,7 @@ export default {
       if(isiOsSafari('iPhone')){
           // document.write('Probably Safari on an iPhone: ' + ua);
           alert('this is an ' + ua);
-          if (!nav.standalone) {
+          if (!nav.standalone || !nav.minimalUi) {
             this.notificationShow = true;
           }
 
