@@ -51,6 +51,11 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'
   ],
+  manifest: {
+    name: 'Nuxt PWA APP',
+    short_name: 'NuxtPWA',
+    display: 'minimal-ui'
+  },
   /*
   ** Axios module configuration
   */
