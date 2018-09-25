@@ -55,7 +55,7 @@ export default {
       // Check if Mobile Safari on iPhone
       if(isiOsSafari('iPhone')){
           // document.write('Probably Safari on an iPhone: ' + ua);
-          alert('this is an ' + ua);
+          // alert('this is an ' + ua);
           if (!nav.standalone) {
             this.notificationShow = true;
           }
@@ -64,13 +64,13 @@ export default {
       // Check if Mobile Safari on iPod
       else if(isiOsSafari('iPad')){
           // document.write('Probably Safari on an iPad: ' + ua);
-          alert('this is an ' + ua);
-          alert('this is an ipad');
+          // alert('this is an ' + ua);
+          // alert('this is an ipad');
           this.notificationShow = true;
       }
       else{
           // document.write('Probably something else: ' + ua)
-          alert('this is an ' + ua);
+          // alert('this is an ' + ua);
       }
     }
 }
