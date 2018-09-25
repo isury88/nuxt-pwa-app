@@ -8,7 +8,8 @@
       <h2 class="subtitle">
         My classy Nuxt.js project
       </h2>
-        <button class="btn btn-primary" @click="checkOs">Check OS</button>
+        <!-- <button class="btn btn-primary" @click="checkOs">Check OS</button> -->
+        <div v-if="notificationShow" class="notification-div">Do follow the instructions below...</div>
       <!-- <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -27,42 +28,47 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  data() {
+    return {
+      notificationShow: false
+    }
+  },
   components: {
     Logo
   },
-  methods: {
-    checkOs() {
-        let nav = window.navigator;
-        let ua = nav.userAgent;
+    mounted: function () {
+      let nav = window.navigator;
+      let ua = nav.userAgent;
 
-        function isiOsSafari (a) {
-            return ("standalone" in nav) // There's a thing called standalone in nav
-             && !nav.standalone // It is not running in standalone mode
-             && ua.indexOf(a)!=-1 // iPhone is in the UA string (could be Opera)
-             && ua.indexOf('Mac OS')!=-1 // There's Mac in the UA string (not Opera)
-             && ua.indexOf('Safari')!=-1
-             /* if all the above are true this probably means this is
-             the Safari browser,
-             not a webview in an app,
-             not a page in standalone mode */
-        }
-
-        // Check if Mobile Safari on iPhone
-        if(isiOsSafari('iPhone')){
-            // document.write('Probably Safari on an iPhone: ' + ua);
-            alert('this is an Iphone!!')
-        }
-        // Check if Mobile Safari on iPod
-        else if(isiOsSafari('iPad')){
-            // document.write('Probably Safari on an iPad: ' + ua);
-            alert('this is an IPad!!' + ua);
-        }
-        else{
-            // document.write('Probably something else: ' + ua)
-            alert('this is an Iphone!!' + ua);
-        }
+      function isiOsSafari (a) {
+          return ("standalone" in nav) // There's a thing called standalone in nav
+           && !nav.standalone // It is not running in standalone mode
+           && ua.indexOf(a)!=-1 // iPhone is in the UA string (could be Opera)
+           && ua.indexOf('Mac OS')!=-1 // There's Mac in the UA string (not Opera)
+           && ua.indexOf('Safari')!=-1
+           /* if all the above are true this probably means this is
+           the Safari browser,
+           not a webview in an app,
+           not a page in standalone mode */
       }
-  }
+
+      // Check if Mobile Safari on iPhone
+      if(isiOsSafari('iPhone')){
+          // document.write('Probably Safari on an iPhone: ' + ua);
+          alert('this is an ' + ua);
+          this.notificationShow = true;
+      }
+      // Check if Mobile Safari on iPod
+      else if(isiOsSafari('iPad')){
+          // document.write('Probably Safari on an iPad: ' + ua);
+          alert('this is an ' + ua);
+      }
+      else{
+          // document.write('Probably something else: ' + ua)
+          alert('this is an ' + ua);
+
+      }
+    }
 }
 </script>
 
@@ -96,5 +102,16 @@ export default {
 .links
 {
   padding-top: 15px;
+}
+
+.notification-div {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: tomato;
+  color: white;
 }
 </style>
