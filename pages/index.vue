@@ -8,7 +8,8 @@
       <h2 class="subtitle">
         My classy Nuxt.js project
       </h2>
-      <div class="links">
+        <button class="btn btn-primary" @click="checkOs">Check OS</button>
+      <!-- <div class="links">
         <a
           href="https://nuxtjs.org/"
           target="_blank"
@@ -17,7 +18,7 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -28,6 +29,37 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  methods: {
+    checkOs() {
+        let nav = window.navigator;
+        let ua = nav.userAgent;
+
+        function isiOsSafari (a) {
+            return ("standalone" in nav) // There's a thing called standalone in nav
+             && !nav.standalone // It is not running in standalone mode
+             && ua.indexOf(a)!=-1 // iPhone is in the UA string (could be Opera)
+             && ua.indexOf('Mac OS')!=-1 // There's Mac in the UA string (not Opera)
+             && ua.indexOf('Safari')!=-1
+             /* if all the above are true this probably means this is
+             the Safari browser,
+             not a webview in an app,
+             not a page in standalone mode */
+        }
+
+        // Check if Mobile Safari on iPhone
+        if(isiOsSafari('iPhone')){
+            // document.write('Probably Safari on an iPhone: ' + ua);
+            alert('this is an Iphone!!')
+        }
+        // Check if Mobile Safari on iPod
+        else if(isiOsSafari('iPad')){
+            document.write('Probably Safari on an iPad: ' + ua);
+        }
+        else{
+            document.write('Probably something else: ' + ua)
+        }
+      }
   }
 }
 </script>
