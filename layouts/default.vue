@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html
 {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -57,10 +57,18 @@ html
 }
 .navigator {
   width: 100vw;
-  height: 50px;
   background-color: orangered;
   position: absolute;
   bottom: 0;
   left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  & > * {
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+  }
 }
 </style>
