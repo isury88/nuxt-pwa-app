@@ -41,7 +41,6 @@ export default {
       let ua = nav.userAgent;
 
       function isiOsSafari (a) {
-        console.log(nav);
           return ("standalone" in nav) // There's a thing called standalone in nav
            && !nav.standalone // It is not running in standalone mode
            && ua.indexOf(a)!=-1 // iPhone is in the UA string (could be Opera)
