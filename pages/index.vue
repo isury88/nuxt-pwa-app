@@ -56,7 +56,10 @@ export default {
       if(isiOsSafari('iPhone')){
           // document.write('Probably Safari on an iPhone: ' + ua);
           alert('this is an ' + ua);
-          this.notificationShow = true;
+          if (!nav.standalone) {
+            this.notificationShow = true;
+          }
+
       }
       // Check if Mobile Safari on iPod
       else if(isiOsSafari('iPad')){
