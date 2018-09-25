@@ -10,11 +10,18 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" },
+      { href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" },
+      { href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" },
+      { href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" },
+      { href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" },
+      { href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" },
+      { href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" }
     ]
   },
 
@@ -59,7 +66,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
