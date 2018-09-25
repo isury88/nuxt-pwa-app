@@ -62,6 +62,8 @@ export default {
       else if(isiOsSafari('iPad')){
           // document.write('Probably Safari on an iPad: ' + ua);
           alert('this is an ' + ua);
+          alert('this is an ipad');
+          this.notificationShow = true;
       }
       else{
           // document.write('Probably something else: ' + ua)
